@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme") || "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <title>数字孪生预测 · AI 发酵平台</title>
+  <meta name="description" content="AI 发酵平台 —— 发酵过程的数字孪生，实时镜像真实批次、推演补料与优化方案。" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <!-- 部署后请把 your-domain.com 替换为真实域名（og:image / og:url 需绝对地址才生效） -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AI 发酵平台" />
+  <meta property="og:title" content="数字孪生预测 · AI 发酵平台" />
+  <meta property="og:description" content="发酵过程的数字孪生，实时镜像真实批次、推演补料与优化方案。" />
+  <meta property="og:image" content="https://your-domain.com/og-twin.png" />
+  <meta property="og:url" content="https://your-domain.com/digital-twin.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="数字孪生预测 · AI 发酵平台" />
+  <meta name="twitter:description" content="发酵过程的数字孪生，实时镜像真实批次、推演补料与优化方案。" />
+  <meta name="twitter:image" content="https://your-domain.com/og-twin.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="bg-orb bg-orb-a"></div>
+    <div class="bg-orb bg-orb-b"></div>
+    <div class="bg-orb bg-orb-c"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-scan"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="js-brand">AI 发酵平台</span>
+      </a>
+      <nav class="site-nav" id="siteNav" aria-label="主导航">
+        <a class="nav-link" href="index.html">AI 时序预测</a>
+        <a class="nav-link is-active" href="digital-twin.html" aria-current="page">数字孪生预测</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="切换深浅色" title="切换深浅色">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+      </button>
+      <button class="btn btn-ghost js-open-contact" type="button">联系我们</button>
+      <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="siteNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="status-pill"><span class="dot"></span>数字孪生引擎 · ONLINE</span>
+          <h1>给发酵罐，造一个<span class="grad">数字孪生</span></h1>
+          <p class="hero-sub">
+            给每个批次建立数字孪生，实时镜像过程演进，推演补料策略、对比多种优化方案，在动手前先算清结果。
+          </p>
+
+          <div class="readout" aria-label="关键指标">
+            <span class="chip"><b>高精度</b> 过程建模</span>
+            <span class="chip"><b>实时</b> 批次镜像</span>
+            <span class="chip"><b>多方案</b> 模拟推演</span>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary js-open-contact" type="button">预约数字孪生演示</button>
+            <a class="btn btn-ghost" href="#features">了解孪生能力</a>
+          </div>
+          <p class="hero-note">
+            拨打 <a class="js-phone" href="#">电话</a>，或留下需求，我们 1 个工作日内回电。
+          </p>
+        </div>
+
+        <figure class="hero-visual">
+          <span class="card-scan" aria-hidden="true"></span>
+          <svg class="hud" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke">
+              <path d="M0 14 V0 H14" />
+              <path d="M86 0 H100 V14" />
+              <path d="M100 86 V100 H86" />
+              <path d="M14 100 H0 V86" />
+            </g>
+          </svg>
+
+          <div class="chart-status">
+            <span class="live">SYNC · REALTIME</span>
+            <span class="js-clock">--</span>
+          </div>
+
+          <div id="twin-canvas" class="twin-canvas"></div>
+          <div class="process-flow" aria-label="发酵流程">
+            <span class="pf-step"><i style="--c:#7dd3fc"></i>进料</span>
+            <span class="pf-arrow">→</span>
+            <span class="pf-step"><i style="--c:#fbbf24"></i>补料</span>
+            <span class="pf-arrow">→</span>
+            <span class="pf-step"><i style="--c:#22d3ee"></i>罐内发酵</span>
+            <span class="pf-arrow">→</span>
+            <span class="pf-step"><i style="--c:#34d399"></i>产物出料</span>
+          </div>
+          <figcaption>示意：数字孪生实时镜像真实批次（动态示意）</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 能力 -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Capabilities</p>
+          <h2 class="section-title">孪生能做什么</h2>
+          <p class="section-sub">用可推演的数字模型，替代“先试错再调整”的批次经验。</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></div>
+            <h3>高精度建模</h3>
+            <p>贴近真实发酵动态，忠实还原每个批次。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div>
+            <h3>方案推演</h3>
+            <p>多种补料与策略模拟对比，给出建议与解释。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg></div>
+            <h3>过程回放</h3>
+            <p>历史批次回放与滚动预测，先复盘再优化。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 流程 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Workflow</p>
+          <h2 class="section-title">三步接入</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-num">01</span>
+            <h3>数据接入</h3>
+            <p>对接现有批次 / 采集数据，建立数字化基线。</p>
+          </li>
+          <li>
+            <span class="step-num">02</span>
+            <h3>实时同步</h3>
+            <p>让数字孪生持续跟随真实批次。</p>
+          </li>
+          <li>
+            <span class="step-num">03</span>
+            <h3>推演决策</h3>
+            <p>推演补料与多方案，把结果交给您拍板。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 产品界面 -->
+    <section class="section" id="product">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Product</p>
+          <h2 class="section-title">真实产品界面</h2>
+          <p class="section-sub">补料推演、批次镜像、方案对比，都在一个界面里完成。</p>
+        </div>
+        <figure class="product-shot">
+          <div class="product-chrome" aria-hidden="true">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="chrome-url">数字孪生 · 批次实时镜像</span>
+          </div>
+          <img src="product-twin.png" alt="数字孪生预测产品界面" loading="lazy" />
+          <figcaption>数字孪生预测 · 产品界面</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-panel">
+          <h2>想看孪生怎么跑？</h2>
+          <p>留下联系方式，我们带着演示与方案和您对接。</p>
+          <button class="btn btn-primary js-open-contact" type="button">联系我 · 预约演示</button>
+          <p class="phone-line">或直接拨打 <a class="js-phone" href="#">电话</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><span class="js-brand">AI 发酵平台</span> · 电话 <a class="js-phone" href="#">电话</a></div>
+      <div>© 2026 <span class="js-brand">AI 发酵平台</span> · 保留所有权利</div>
+    </div>
+  </footer>
+
+  <script src="vendor/three.min.js"></script>
+  <script src="twin.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

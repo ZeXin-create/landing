@@ -1,0 +1,5 @@
+# macOS
+.DS_Store
+
+# 依赖 / 构建产物（本工程无构建，仅作兜底）
+node_modules/
